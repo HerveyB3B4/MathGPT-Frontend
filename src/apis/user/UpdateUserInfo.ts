@@ -11,7 +11,7 @@ type Request = {
 };
 
 async function updateUserInfo(data: Request) {
-  return request.post("/api/user/update", data);
+  return request.put("/api/user/update", data);
 }
 
 export default updateUserInfo;
