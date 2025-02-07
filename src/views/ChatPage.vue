@@ -1,11 +1,11 @@
 <template>
   <header-menu />
   <aside-menu />
-  <div class="w-full flex flex-col min-h-screen  bg-white">
+  <div class=" flex flex-col min-h-screen ml-60 mr-60 bg-white">
     <div class="p-8 font-semibold border-b" />
     <div ref="chatContainer" class="flex-1 p-4 overflow-y-auto border-b">
-      <div class=" mx-auto text-black">
-        <div v-for="(message, index) in messages" :key="index" :class="message.isUser ? 'text-right' : 'text-left'">
+      <div class=" text-black w-1/2">
+        <div v-for="(message, index) in messages" :key="index" :class="message.isUser ? 'text-right right-0' : 'text-left left-0'">
           <div :class="message.isUser ? 'bg-blue-100' : 'bg-gray-100'" class="mb-4 p-4 rounded-lg">
             <p>{{ message.text }}</p>
           </div>
