@@ -19,7 +19,7 @@ const service: AxiosInstance = axios.create({
 service.interceptors.request.use((config: InternalAxiosRequestConfig) => {
   return config;
 }, (error: AxiosError) => {
-  // TODO: 消息弹窗
+  alert(`请求失败: ${error.message}`);
   return Promise.reject(error);
 });
 
@@ -28,7 +28,7 @@ service.interceptors.response.use((response: AxiosResponse) => {
   if (code === 200) {
     return data;
   } else {
-    // TODO: 消息弹窗
+    alert(message);
     return Promise.reject(new Error(message));
   }
 }, (error: AxiosError) => {
@@ -51,7 +51,7 @@ service.interceptors.response.use((response: AxiosResponse) => {
       message = "网络错误";
       break;
   }
-  // TODO: 消息弹窗
+  alert(message);
   console.error(error);
   return Promise.reject(new Error(message));
 });
